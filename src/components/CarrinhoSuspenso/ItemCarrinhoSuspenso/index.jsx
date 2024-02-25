@@ -1,14 +1,13 @@
-import React from "react";
-import Quantidade from "@/components/Quantidade";
-import Botao from "@/components/Botao";
-import ValorFormatado from "@/components/ValorFormatado";
+import React from 'react'
+import Quantidade from '@/components/Quantidade'
+import Botao from '@/components/Botao'
+import ValorFormatado from '@/components/ValorFormatado'
+import { useCarrinhoContext } from '@/hooks/useCarrinhoContext.jsx'
 
-const ItemCarrinhoSuspenso = ({
-  itemCarrinho,
-  removerProdutoCarrinho,
-  adicionarProduto,
-  removerProduto,
-}) => {
+const ItemCarrinhoSuspenso = ({ itemCarrinho }) => {
+  const { removerProduto, adicionarProduto, removerProdutoCarrinho } =
+    useCarrinhoContext()
+
   return (
     <li>
       <>
@@ -38,7 +37,7 @@ const ItemCarrinhoSuspenso = ({
         <div className="divisor my-5" />
       </>
     </li>
-  );
-};
+  )
+}
 
-export default ItemCarrinhoSuspenso;
+export default ItemCarrinhoSuspenso

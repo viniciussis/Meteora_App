@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import ItemCarrinhoSuspenso from '@/components/CarrinhoSuspenso/ItemCarrinhoSuspenso'
 import ItemCarrinho from '@/components/ItemCarrinho'
 import { useLocation } from 'react-router-dom'
 import { useCarrinhoContext } from '@/hooks/useCarrinhoContext.jsx'
 
-const ListaProdutosCarrinho = ({ carrinho }) => {
+const ListaProdutosCarrinho = () => {
   const location = useLocation()
-  const { removerProduto, adicionarProduto, removerProdutoCarrinho } = useCarrinhoContext()
+  const { carrinho } = useCarrinhoContext()
 
   return (
     <ul className="list-unstyled">
@@ -20,9 +20,6 @@ const ListaProdutosCarrinho = ({ carrinho }) => {
             <ItemCarrinhoSuspenso
               key={itemCarrinho.id}
               itemCarrinho={itemCarrinho}
-              removerProduto={removerProduto}
-              adicionarProduto={adicionarProduto}
-              removerProdutoCarrinho={removerProdutoCarrinho}
             />
           )
         })
